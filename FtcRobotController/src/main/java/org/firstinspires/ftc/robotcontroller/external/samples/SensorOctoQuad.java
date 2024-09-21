@@ -17,7 +17,8 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- */
+ *//*
+
 
 package org.firstinspires.ftc.robotcontroller.external.samples;
 
@@ -27,6 +28,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import org.firstinspires.ftc.robotcore.external.Telemetry;
 
+*/
 /*
  * This OpMode illustrates how to use the DigitalChickenLabs OctoQuad Quadrature Encoder & Pulse Width Interface Module
  *
@@ -53,7 +55,8 @@ import org.firstinspires.ftc.robotcore.external.Telemetry;
  * Remove or comment out the @Disabled line to add this OpMode to the Driver Station OpMode list
  *
  * See the sensor's product page: https://www.tindie.com/products/digitalchickenlabs/octoquad-8ch-quadrature-pulse-width-decoder/
- */
+ *//*
+
 @TeleOp(name = "OctoQuad Basic", group="OctoQuad")
 @Disabled
 public class SensorOctoQuad extends LinearOpMode {
@@ -70,9 +73,11 @@ public class SensorOctoQuad extends LinearOpMode {
     private int         posRight;
     private int         posPerp;
 
-    /**
+    */
+/**
      * This function is executed when this OpMode is selected from the Driver Station.
-     */
+     *//*
+
     @Override
     public void runOpMode() {
 
@@ -138,4 +143,4 @@ public class SensorOctoQuad extends LinearOpMode {
         posRight = positions[ODO_RIGHT];
         posPerp  = positions[ODO_PERP];
     }
-}
+}*/
