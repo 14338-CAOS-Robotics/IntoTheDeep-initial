@@ -1,39 +1,12 @@
 package org.firstinspires.ftc.teamcode.Hardware;
 
-import static org.firstinspires.ftc.teamcode.DashConstants.PositionsAndSpeeds.RobotConstants.armJointPositionPixel;
-import static org.firstinspires.ftc.teamcode.DashConstants.PositionsAndSpeeds.RobotConstants.armJointPositionScore;
-import static org.firstinspires.ftc.teamcode.DashConstants.PositionsAndSpeeds.RobotConstants.armJointPositionTransfer;
-import static org.firstinspires.ftc.teamcode.DashConstants.PositionsAndSpeeds.RobotConstants.armJointWaitTime;
-import static org.firstinspires.ftc.teamcode.DashConstants.PositionsAndSpeeds.RobotConstants.armJointWaitTime2;
-import static org.firstinspires.ftc.teamcode.DashConstants.PositionsAndSpeeds.RobotConstants.clawPositionClosed;
-import static org.firstinspires.ftc.teamcode.DashConstants.PositionsAndSpeeds.RobotConstants.clawPositionOpen;
-import static org.firstinspires.ftc.teamcode.DashConstants.PositionsAndSpeeds.RobotConstants.pixelDropperReal;
-import static org.firstinspires.ftc.teamcode.DashConstants.PositionsAndSpeeds.RobotConstants.pixelDropperRelease;
-import static org.firstinspires.ftc.teamcode.DashConstants.PositionsAndSpeeds.RobotConstants.slideHangClaw;
-import static org.firstinspires.ftc.teamcode.DashConstants.PositionsAndSpeeds.RobotConstants.slideHangV4b;
-import static org.firstinspires.ftc.teamcode.DashConstants.PositionsAndSpeeds.RobotConstants.v4bPositionDown;
-import static org.firstinspires.ftc.teamcode.DashConstants.PositionsAndSpeeds.RobotConstants.v4bPositionUp;
 
 import static org.firstinspires.ftc.teamcode.Hardware.Robot.DriveMode.*;
-import static org.firstinspires.ftc.teamcode.Hardware.Robot.OuttakeConstants.outtakeWaitTime;
-import static org.firstinspires.ftc.teamcode.Hardware.Robot.OuttakeConstants.wristConstantTime;
 import static org.firstinspires.ftc.teamcode.Utilities.OpModeUtils.hardwareMap;
-import static org.firstinspires.ftc.teamcode.Utilities.OpModeUtils.linearOpMode;
-import static org.firstinspires.ftc.teamcode.Utilities.OpModeUtils.multTelemetry;
-
-
-import com.acmerobotics.dashboard.config.Config;
-import com.acmerobotics.roadrunner.geometry.Pose2d;
-import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.Servo;
-import com.qualcomm.robotcore.util.ElapsedTime;
-
-import org.firstinspires.ftc.teamcode.Control.Localization.ThreeWheelOdometry;
 import org.firstinspires.ftc.teamcode.Control.Movement;
 import org.firstinspires.ftc.teamcode.GamepadControls.Controller;
 import org.firstinspires.ftc.teamcode.Hardware.Physical.CAOSHardware;
-import org.firstinspires.ftc.teamcode.Utilities.Side;
-import org.firstinspires.ftc.teamcode.Vision.AprilTagHeadingFixer;
+
 
 /**
  * A class for containing an FTC Mecanum robot
