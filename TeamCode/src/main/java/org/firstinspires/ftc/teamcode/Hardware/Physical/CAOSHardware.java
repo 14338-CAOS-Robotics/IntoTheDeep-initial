@@ -12,6 +12,7 @@ import com.qualcomm.robotcore.hardware.VoltageSensor;
 import org.firstinspires.ftc.robotcore.external.navigation.AxesOrder;
 import org.firstinspires.ftc.robotcore.external.navigation.AxesReference;
 import org.firstinspires.ftc.robotcore.external.navigation.Orientation;
+import org.firstinspires.ftc.teamcode.Hardware.Sensors.Color_Sensor;
 import org.firstinspires.ftc.teamcode.Hardware.Sensors.Distance_Sensor;
 
 //hardware variables followed by hardware objects
@@ -28,16 +29,17 @@ public class CAOSHardware extends Hardware {
 
     public BNO055IMU imu;
 
-    public DcMotor liftLeft, liftRight, outtake4Bar, intakeArm;
+    public DcMotor intakeExtend, activeIntake, lift;
 
     //NOTE: THESE WILL BE DECLARED IN THE INDIVIDUAL SUBSYSTEMS. HERE TO KEEP TRACK OF
-    public Servo lClaw, rClaw, leftOuttake4b, rightOuttake4b, outtakePitch, outtakeRoll, leftOuttake, rightOuttake, planeLaunch;
+    public Servo claw, intakePitchLeft, intakePitchRight, outtakePitchLeft, outtakePitchRight, outtakeRoll;
 
     private HardwareMap hardwareMap;
 
     private double imuOffset = 0;
     private int imuNumber = 0;
     Distance_Sensor leftIntakeDist, rightIntakeDist;
+    Color_Sensor intakeSensor, outtakeSensor;
 
 
     @Override
@@ -98,10 +100,11 @@ public class CAOSHardware extends Hardware {
         leftFront = hardwareMap.dcMotor.get("lf");
         leftBack = hardwareMap.dcMotor.get("lb");
         rightBack = hardwareMap.dcMotor.get("rb");
-        liftLeft = hardwareMap.dcMotor.get("ll");
-        liftRight = hardwareMap.dcMotor.get("rl");
 
-        intakeArm = hardwareMap.dcMotor.get("ia");
+        //OTHER
+        activeIntake = hardwareMap.dcMotor.get("ia");
+        intakeExtend = hardwareMap.dcMotor.get("ie");
+        lift = hardwareMap.dcMotor.get("ol");
 
 //        lClaw = hardwareMap.servo.get("leftClaw");
 //        rClaw = hardwareMap.servo.get("rightClaw");
@@ -109,7 +112,8 @@ public class CAOSHardware extends Hardware {
 //        rClaw.setDirection(Servo.Direction.FORWARD);
 
 
-        liftLeft.setDirection(DcMotorSimple.Direction.REVERSE);
+        //REVERSE STUFF HERE
+        //DCMotor.setDirection(DcMotorSimple.Direction.REVERSE);
 
         verticalEncoderLeft = rightFront;
         verticalEncoderRight = leftBack;
@@ -119,15 +123,6 @@ public class CAOSHardware extends Hardware {
         verticalEncoderRight.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         verticalEncoderLeft.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
 
-
-//        liftLeft = hardwareMap.dcMotor.get("spool2");
-//        liftRight = hardwareMap.dcMotor.get("spool");
-
-//        liftRight.setDirection(DcMotorSimple.Direction.REVERSE);
-
-//        outtake4Bar = hardwareMap.dcMotor.get("v4b");
-
-//        outtake4Bar.setDirection(DcMotorSimple.Direction.REVERSE);
 
         driveWithoutEncoders();
 
