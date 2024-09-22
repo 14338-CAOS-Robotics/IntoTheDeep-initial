@@ -40,8 +40,8 @@ public class Robot {
         drivetrain = new CAOSMecanumDrive(hardwareMap);
         caosHardware = new CAOSHardware(hardwareMap);
         movement = new Movement(0, 0, Math.PI / 2, caosHardware);
-        intake = new Intake();
-        outtake = new Outtake();
+        intake = new Intake(caosHardware);
+        outtake = new Outtake(caosHardware);
     }
 
     /**

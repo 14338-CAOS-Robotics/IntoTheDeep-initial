@@ -16,8 +16,7 @@ public class Intake {
     CAOSHardware hardware;
     private Color_Sensor colorSensor;
     private DcMotorEx activeIntake, horizontalExtension;
-    public Intake() {
-        hardware = new CAOSHardware(hardwareMap);
+    public Intake(CAOSHardware hardware) {
         activeIntake = (DcMotorEx) hardware.activeIntake;
         horizontalExtension = (DcMotorEx) hardware.intakeExtend;
         colorSensor = new Color_Sensor();
