@@ -358,7 +358,7 @@ public class CAOSMecanumDrive extends MecanumDrive {
         double rotX = x*Math.cos(-robotHeading) - y*Math.sin(-robotHeading);
         double rotY = x*Math.sin(-robotHeading) + y*Math.cos(-robotHeading);
 
-        rotX *= 1.1;
+        //rotX *= 1.1;
 
         double denominator = Math.max(Math.abs(rotY) +Math.abs(rotX) + Math.abs(h), 1);
         double frPower = (rotY - rotX - h)/denominator;
