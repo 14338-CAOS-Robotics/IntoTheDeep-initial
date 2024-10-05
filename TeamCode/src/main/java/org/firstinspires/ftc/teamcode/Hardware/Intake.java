@@ -20,7 +20,7 @@ public class Intake {
         activeIntake = (DcMotorEx) hardware.activeIntake;
         horizontalExtension = (DcMotorEx) hardware.intakeExtend;
         colorSensor = new Color_Sensor();
-        colorSensor.init("ic");
+        //colorSensor.init("ic");
     }
 
     /**
