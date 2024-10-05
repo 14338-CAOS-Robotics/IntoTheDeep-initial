@@ -3,6 +3,9 @@ package org.firstinspires.ftc.teamcode.Hardware;
 
 import static org.firstinspires.ftc.teamcode.Hardware.Robot.DriveMode.*;
 import static org.firstinspires.ftc.teamcode.Utilities.OpModeUtils.hardwareMap;
+
+import com.acmerobotics.dashboard.config.Config;
+
 import org.firstinspires.ftc.teamcode.Control.Movement;
 import org.firstinspires.ftc.teamcode.GamepadControls.Controller;
 import org.firstinspires.ftc.teamcode.Hardware.Physical.CAOSHardware;
@@ -11,7 +14,9 @@ import org.firstinspires.ftc.teamcode.Hardware.Physical.CAOSHardware;
 /**
  * A class for containing an FTC Mecanum robot
  */
+@Config
 public class Robot {
+    public static double POWER = 0.8;
     public CAOSMecanumDrive drivetrain;
     public CAOSHardware caosHardware;
 
@@ -51,6 +56,14 @@ public class Robot {
     public void update() {
     }
 
+    public void setFieldDrivePower(double x, double y, double h) {
+        drivetrain.setFieldCentricDrivePower(x,y,h,movement.odo.getHeading());
+
+    }
+
+    public void setRobotDrivePower(double x, double y, double h) {
+        drivetrain.setDrivePower(x,y,h,POWER);
+    }
     public void setController1(Controller controller) {
         gp1 = controller;
     }
@@ -59,9 +72,9 @@ public class Robot {
         gp2 = controller;
     }
 
-    public void setDriveMode(DriveMode mode) {
-        currentMode = mode;
-    }
+//    private void setDriveMode(DriveMode mode) {
+//        currentMode = mode;
+//    }
 }
 
 
