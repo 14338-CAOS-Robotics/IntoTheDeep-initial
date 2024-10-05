@@ -131,4 +131,8 @@ public class Controller {
     public boolean dpadPress(){
         return this.buttons.DPADPress();
     }
+
+    public boolean joyStickUsed(JoystickControls.Input stick) {
+        return (get(stick, JoystickControls.Value.X) != 0) || (get(stick, JoystickControls.Value.Y) != 0);
+    }
 }
