@@ -54,6 +54,8 @@ public class Robot {
      * RUN ONCE PER LOOP
      */
     public void update() {
+        drivetrain.update();
+        Controller.update();
     }
 
     public void setFieldDrivePower(double x, double y, double h) {
