@@ -14,8 +14,8 @@ import org.firstinspires.ftc.teamcode.Hardware.Physical.CAOSHardware;
  */
 @Config
 public class Outtake {
-    public static double CLAW_OPEN_POSITION = 0.4;
-    public static double CLAW_CLOSED_POSITION = 0.64;
+    public static double CLAW_OPEN_POSITION = 0.0;
+    public static double CLAW_CLOSED_POSITION = 0.4;
     Servo pitch, roll, effect;
     DcMotorEx lift;
     public Outtake(CAOSHardware hardware) {
